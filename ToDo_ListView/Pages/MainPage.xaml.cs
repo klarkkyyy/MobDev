@@ -1,48 +1,117 @@
-﻿using ToDo_ListView.Models;
+﻿using ToDoMaui_Listview;
 using ToDo_ListView.PageModels;
 
 namespace ToDo_ListView.Pages
 {
     public partial class MainPage : ContentPage
     {
+        private readonly MainPageModel _model;
+        private ToDoClass? _itemBeingEdited = null;
+
         public MainPage(MainPageModel model)
         {
             InitializeComponent();
-            BindingContext = model;
+            _model = model;
+            BindingContext = _model;
+            todoLV.ItemsSource = _model.ToDoItems;
+            UpdateEmptyState();
         }
 
+        // ── ADD ──────────────────────────────────────────────
         private void AddToDoItem(object sender, EventArgs e)
         {
-            // TODO: Implement add functionality
+            string title = titleEntry.Text?.Trim() ?? "";
+            string detail = detailsEditor.Text?.Trim() ?? "";
+
+            if (string.IsNullOrEmpty(title))
+            {
+                DisplayAlert("Oops", "Title cannot be empty.", "OK");
+                return;
+            }
+
+            _model.ToDoItems.Add(new ToDoClass { title = title, detail = detail });
+            ClearInputs();
+            UpdateEmptyState();
         }
 
+        // ── SELECT (load item into inputs for editing) ────────
+        private void TodoLV_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item is not ToDoClass selected) return;
+
+            _itemBeingEdited = selected;
+            titleEntry.Text = selected.title;
+            detailsEditor.Text = selected.detail;
+
+            addBtn.IsVisible = false;
+            editRow.IsVisible = true;
+
+            todoLV.SelectedItem = null;
+        }
+
+        // ── SAVE EDIT ─────────────────────────────────────────
         private void EditToDoItem(object sender, EventArgs e)
         {
-            // TODO: Implement edit functionality
+            if (_itemBeingEdited == null) return;
+
+            string title = titleEntry.Text?.Trim() ?? "";
+            string detail = detailsEditor.Text?.Trim() ?? "";
+
+            if (string.IsNullOrEmpty(title))
+            {
+                DisplayAlert("Oops", "Title cannot be empty.", "OK");
+                return;
+            }
+
+            _itemBeingEdited.title = title;
+            _itemBeingEdited.detail = detail;
+
+            // Refresh ListView
+            todoLV.ItemsSource = null;
+            todoLV.ItemsSource = _model.ToDoItems;
+
+            _itemBeingEdited = null;
+            ClearInputs();
+            ResetButtons();
         }
 
+        // ── CANCEL EDIT ───────────────────────────────────────
         private void CancelEdit(object sender, EventArgs e)
         {
-            // TODO: Implement cancel edit functionality
+            _itemBeingEdited = null;
+            ClearInputs();
+            ResetButtons();
         }
 
-        private void TodoLV_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // TODO: Implement selection changed functionality
-            if (e.CurrentSelection.Count > 0)
-            {
-                var selectedItem = e.CurrentSelection[0];
-                // Handle selected item
-            }
-        }
-
+        // ── DELETE ────────────────────────────────────────────
         private void DeleteToDoItem(object sender, EventArgs e)
         {
-            // TODO: Implement delete functionality
-            if (sender is ImageButton button && button.CommandParameter is int id)
+            if (sender is Button btn && btn.CommandParameter is int id)
             {
-                // Delete item with id
+                var item = _model.ToDoItems.FirstOrDefault(t => t.id == id);
+                if (item != null)
+                    _model.ToDoItems.Remove(item);
+
+                UpdateEmptyState();
             }
+        }
+
+        // ── HELPERS ───────────────────────────────────────────
+        private void ClearInputs()
+        {
+            titleEntry.Text = string.Empty;
+            detailsEditor.Text = string.Empty;
+        }
+
+        private void ResetButtons()
+        {
+            addBtn.IsVisible = true;
+            editRow.IsVisible = false;
+        }
+
+        private void UpdateEmptyState()
+        {
+            emptyLabel.IsVisible = _model.ToDoItems.Count == 0;
         }
     }
 }

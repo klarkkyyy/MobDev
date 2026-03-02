@@ -1,48 +1,41 @@
 ﻿namespace ToDoMaui_Listview;
 
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 public class ToDoClass : INotifyPropertyChanged
 {
+    private static int _nextId = 1;
+
+    int _id;
+    string _title = string.Empty;
+    string _detail = string.Empty;
+
     public ToDoClass()
     {
+        _id = _nextId++;
     }
-    int _id { get; set; }
-    string _title { get; set; }
-    string _detail { get; set; }
-
 
     public int id
     {
-        get { return _id; }
-        set { _id = value; OnPropertyChanged(nameof(id)); }
+        get => _id;
+        set { _id = value; OnPropertyChanged(); }
     }
 
     public string title
     {
-        get { return _title; }
-        set { _title = value; OnPropertyChanged(nameof(title)); }
+        get => _title;
+        set { _title = value; OnPropertyChanged(); }
     }
+
     public string detail
     {
-        get { return _detail; }
-        set { _detail = value; OnPropertyChanged(nameof(detail)); }
+        get => _detail;
+        set { _detail = value; OnPropertyChanged(); }
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
-    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-    protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
-    {
-        if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-        field = value;
-        OnPropertyChanged(propertyName);
-        return true;
-    }
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
