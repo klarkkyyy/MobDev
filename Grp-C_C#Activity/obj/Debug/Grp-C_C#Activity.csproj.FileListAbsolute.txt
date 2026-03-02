@@ -1,0 +1,7 @@
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\bin\Debug\Grp-C_C#Activity.exe.config
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\bin\Debug\Grp-C_C#Activity.exe
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\bin\Debug\Grp-C_C#Activity.pdb
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\obj\Debug\Grp-C_C#Activity.csproj.AssemblyReference.cache
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\obj\Debug\Grp-C_C#Activity.csproj.CoreCompileInputs.cache
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\obj\Debug\Grp-C_C#Activity.exe
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\Grp-C_C#Activity\obj\Debug\Grp-C_C#Activity.pdb

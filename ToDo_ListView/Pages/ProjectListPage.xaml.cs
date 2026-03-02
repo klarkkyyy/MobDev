@@ -1,0 +1,11 @@
+namespace ToDo_ListView.Pages
+{
+    public partial class ProjectListPage : ContentPage
+    {
+        public ProjectListPage(ProjectListPageModel model)
+        {
+            BindingContext = model;
+            InitializeComponent();
+        }
+    }
+}

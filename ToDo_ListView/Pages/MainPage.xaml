@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pageModels="clr-namespace:ToDo_ListView.PageModels"             
+             xmlns:models="clr-namespace:ToDoMaui_Listview"
+             xmlns:controls="clr-namespace:ToDo_ListView.Pages.Controls"
+             xmlns:pullToRefresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ToDo_ListView.Pages.MainPage"
+             x:DataType="pageModels:MainPageModel"
+             x:Name="OverviewPage"
+             Title="{Binding Today}">
+
+    <Grid RowSpacing="10" Padding="0" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Padding="10" Spacing="10" BackgroundColor="White" Margin="0,0,0,10" InputTransparent="False" ZIndex="1">
+            <Entry x:Name="titleEntry" Placeholder="Title" PlaceholderColor="Gray" TextColor="Black" Keyboard="Text" ReturnType="Next" MaxLength="50"/>
+            <Editor x:Name="detailsEditor" Placeholder="Details" PlaceholderColor="Gray" TextColor="Black" MaxLength="240" Keyboard="Text" HeightRequest="100"/>
+            <Button x:Name="addBtn" IsVisible="True" Text="Add" TextColor="Black" BackgroundColor="LightBlue" Clicked="AddToDoItem" IsEnabled="True"/>
+            <Button x:Name="editBtn" IsVisible="False" Text="Edit" TextColor="Black" BackgroundColor="lightgray" Clicked="EditToDoItem" IsEnabled="True"/>
+            <Button x:Name="cancelBtn" IsVisible="False" Text="Cancel Edit" TextColor="Black" BackgroundColor="LightCoral" Clicked="CancelEdit" IsEnabled="True"/>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1" x:Name="todoLV" BackgroundColor="White" 
+                        SelectionMode="Single"
+                        SelectionChanged="TodoLV_OnSelectionChanged"
+                        ZIndex="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ToDoClass">
+                    <Grid RowSpacing="5" Margin="10,5" Padding="0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation" FontSize="16"
+                               Text="{Binding title}" VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="1" Grid.Column="0" LineBreakMode="TailTruncation" FontSize="14"
+                               Text="{Binding detail}" VerticalTextAlignment="Center"/>
+                        <ImageButton Source="trash.png" BackgroundColor="Transparent" 
+                                     CommandParameter="{Binding id}" 
+                                     Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" 
+                                     Clicked="DeleteToDoItem"
+                                     WidthRequest="40" HeightRequest="40"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
