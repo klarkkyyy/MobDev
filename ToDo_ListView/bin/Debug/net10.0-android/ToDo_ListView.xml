@@ -236,96 +236,6 @@
             Drops the Task table from the database.
             </summary>
         </member>
-        <member name="T:ToDo_ListView.PageModels.MainPageModel">
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.TodoCategoryData">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._todoCategoryData"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.TodoCategoryColors">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._todoCategoryColors"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.Tasks">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._tasks"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.Projects">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._projects"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.IsBusy">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._isBusy"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.IsRefreshing">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._isRefreshing"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.Today">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel._today"/>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.SelectedProject">
-            <inheritdoc cref="F:ToDo_ListView.PageModels.MainPageModel.selectedProject"/>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.refreshCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.RefreshCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.RefreshCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.Refresh"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.navigatedToCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.NavigatedToCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.NavigatedToCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.NavigatedTo"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.navigatedFromCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.NavigatedFromCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.NavigatedFromCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.NavigatedFrom"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.appearingCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.AppearingCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.AppearingCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.Appearing"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.taskCompletedCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.TaskCompletedCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.TaskCompletedCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.TaskCompleted(ToDo_ListView.Models.ProjectTask)"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.addTaskCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.AddTaskCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.AddTaskCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.AddTask"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.navigateToProjectCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.NavigateToProjectCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.NavigateToProjectCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.NavigateToProject(ToDo_ListView.Models.Project)"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.navigateToTaskCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.NavigateToTaskCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.NavigateToTaskCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.NavigateToTask(ToDo_ListView.Models.ProjectTask)"/>.</summary>
-        </member>
-        <member name="F:ToDo_ListView.PageModels.MainPageModel.cleanTasksCommand">
-            <summary>The backing field for <see cref="P:ToDo_ListView.PageModels.MainPageModel.CleanTasksCommand"/>.</summary>
-        </member>
-        <member name="P:ToDo_ListView.PageModels.MainPageModel.CleanTasksCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ToDo_ListView.PageModels.MainPageModel.CleanTasks"/>.</summary>
-        </member>
         <member name="T:ToDo_ListView.PageModels.ManageMetaPageModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -804,30 +714,6 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TodoCategoryData">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TodoCategoryData" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TodoCategoryColors">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TodoCategoryColors" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Tasks">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Tasks" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Projects">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Projects" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Today">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Today" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedProject">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedProject" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Categories">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Categories" generated properties.</summary>
         </member>
@@ -839,6 +725,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Tasks">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Tasks" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Category">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Category" generated properties.</summary>
@@ -852,8 +741,17 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Icon">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Icon" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Icons">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Icons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Projects">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Projects" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedProject">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedProject" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
@@ -876,30 +774,6 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TodoCategoryData">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TodoCategoryData" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TodoCategoryColors">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TodoCategoryColors" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Tasks">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Tasks" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Projects">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Projects" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Today">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Today" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedProject">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedProject" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Categories">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Categories" generated properties.</summary>
         </member>
@@ -911,6 +785,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Tasks">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Tasks" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Category">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Category" generated properties.</summary>
@@ -924,8 +801,17 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Icon">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Icon" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Icons">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Icons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Projects">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Projects" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedProject">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedProject" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>

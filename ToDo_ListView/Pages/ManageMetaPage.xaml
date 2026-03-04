@@ -86,7 +86,7 @@
                 <Button Text="Save" Command="{Binding SaveCategoriesCommand}"
                     SemanticProperties.Description="Save Categories"
                     MinimumHeightRequest="{OnIdiom 44,Desktop=60}" Grid.Column="0" />
-
+                
                 <Button ImageSource="{StaticResource IconAdd}"
                     Command="{Binding AddCategoryCommand}" Grid.Column="1"
                     SemanticProperties.Description="Add Categories" />

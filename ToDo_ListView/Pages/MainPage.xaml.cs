@@ -17,7 +17,7 @@ namespace ToDo_ListView.Pages
             UpdateEmptyState();
         }
 
-        // ── ADD ──────────────────────────────────────────────
+
         private void AddToDoItem(object sender, EventArgs e)
         {
             string title = titleEntry.Text?.Trim() ?? "";
@@ -34,7 +34,7 @@ namespace ToDo_ListView.Pages
             UpdateEmptyState();
         }
 
-        // ── SELECT (load item into inputs for editing) ────────
+        
         private void TodoLV_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item is not ToDoClass selected) return;
@@ -48,8 +48,6 @@ namespace ToDo_ListView.Pages
 
             todoLV.SelectedItem = null;
         }
-
-        // ── SAVE EDIT ─────────────────────────────────────────
         private void EditToDoItem(object sender, EventArgs e)
         {
             if (_itemBeingEdited == null) return;
@@ -66,7 +64,6 @@ namespace ToDo_ListView.Pages
             _itemBeingEdited.title = title;
             _itemBeingEdited.detail = detail;
 
-            // Refresh ListView
             todoLV.ItemsSource = null;
             todoLV.ItemsSource = _model.ToDoItems;
 
@@ -75,7 +72,7 @@ namespace ToDo_ListView.Pages
             ResetButtons();
         }
 
-        // ── CANCEL EDIT ───────────────────────────────────────
+        
         private void CancelEdit(object sender, EventArgs e)
         {
             _itemBeingEdited = null;
@@ -83,7 +80,6 @@ namespace ToDo_ListView.Pages
             ResetButtons();
         }
 
-        // ── DELETE ────────────────────────────────────────────
         private void DeleteToDoItem(object sender, EventArgs e)
         {
             if (sender is Button btn && btn.CommandParameter is int id)
@@ -96,7 +92,7 @@ namespace ToDo_ListView.Pages
             }
         }
 
-        // ── HELPERS ───────────────────────────────────────────
+       
         private void ClearInputs()
         {
             titleEntry.Text = string.Empty;

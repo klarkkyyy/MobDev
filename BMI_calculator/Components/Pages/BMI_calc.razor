@@ -1,0 +1,107 @@
+@page "/"
+
+<div class="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl shadow-md p-8 w-full max-w-sm">
+
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">BMI Calculator</h1>
+
+        <div class="relative mb-6">
+            <input type="number"
+                   id="height_input"
+                   @bind="height"
+                   class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " />
+            <label for="height_input"
+                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2
+                          peer-focus:text-blue-600
+                          peer-placeholder-shown:scale-100
+                          peer-placeholder-shown:-translate-y-1/2
+                          peer-placeholder-shown:top-1/2
+                          peer-focus:top-2
+                          peer-focus:scale-75
+                          peer-focus:-translate-y-4
+                          left-2">
+                Height (cm)
+            </label>
+        </div>
+
+        <div class="relative mb-8">
+            <input type="number"
+                   id="weight_input"
+                   @bind="weight"
+                   class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " />
+            <label for="weight_input"
+                   class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2
+                          peer-focus:text-blue-600
+                          peer-placeholder-shown:scale-100
+                          peer-placeholder-shown:-translate-y-1/2
+                          peer-placeholder-shown:top-1/2
+                          peer-focus:top-2
+                          peer-focus:scale-75
+                          peer-focus:-translate-y-4
+                          left-2">
+                Weight (kg)
+            </label>
+        </div>
+
+        <button type="button"
+                @onclick="CalculateBMI"
+                class="w-full py-3 px-8 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors duration-200">
+            Calculate
+        </button>
+
+        @if (bmi.HasValue)
+        {
+            <div class="mt-6 p-4 rounded-xl text-center @resultBgColor">
+                <p class="text-sm font-medium text-gray-500 mb-1">Your BMI</p>
+                <p class="text-4xl font-bold @resultTextColor">@bmi.Value.ToString("F1")</p>
+                <p class="text-sm font-semibold mt-1 @resultTextColor">@category</p>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+@code {
+    double? height;  
+    double? weight;   
+    double? bmi;
+    string category = "";
+    string resultBgColor = "";
+    string resultTextColor = "";
+
+    void CalculateBMI()
+    {
+        bmi = null;
+
+        double heightInMeters = height.Value / 100.0;
+        bmi = weight.Value / (heightInMeters * heightInMeters);
+
+        if (bmi < 18.5)
+        {
+            category = "Underweight";
+            resultBgColor = "bg-blue-50";
+            resultTextColor = "text-blue-600";
+        }
+        else if (bmi < 25.0)
+        {
+            category = "Normal weight";
+            resultBgColor = "bg-green-50";
+            resultTextColor = "text-green-600";
+        }
+        else if (bmi < 30.0)
+        {
+            category = "Overweight";
+            resultBgColor = "bg-yellow-50";
+            resultTextColor = "text-yellow-600";
+        }
+        else
+        {
+            category = "Obese";
+            resultBgColor = "bg-red-50";
+            resultTextColor = "text-red-600";
+        }
+    }
+}

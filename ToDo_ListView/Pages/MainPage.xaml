@@ -10,9 +10,9 @@
 
     <VerticalStackLayout Spacing="10" VerticalOptions="Fill" HorizontalOptions="Fill">
 
-        <!-- Input Section -->
+      
         <VerticalStackLayout Padding="10" Spacing="8" BackgroundColor="White" Margin="0,0,0,5">
-            <Label Text="📝 My To-Do List" FontSize="20" FontAttributes="Bold"
+            <Label Text="To-Do List" FontSize="20" FontAttributes="Bold"
                    TextColor="#333" HorizontalOptions="Center"/>
 
             <Entry x:Name="titleEntry"
@@ -33,15 +33,9 @@
                     Keyboard="Text"
                     HeightRequest="80"/>
 
-            <!-- Add Button -->
-            <Button x:Name="addBtn"
-                    Text="＋ Add To-Do"
-                    TextColor="White"
-                    BackgroundColor="#4CAF50"
-                    CornerRadius="8"
-                    Clicked="AddToDoItem"/>
+            <Button x:Name="addBtn" Text="＋ Add To-Do" TextColor="White" BackgroundColor="#4CAF50" CornerRadius="8" Clicked="AddToDoItem"/>
 
-            <!-- Edit + Cancel Buttons (hidden by default) -->
+            
             <Grid ColumnDefinitions="*,*" ColumnSpacing="8" x:Name="editRow" IsVisible="False">
                 <Button Grid.Column="0"
                         x:Name="editBtn"
@@ -60,7 +54,6 @@
             </Grid>
         </VerticalStackLayout>
 
-        <!-- Empty State -->
         <Label x:Name="emptyLabel"
                Text="No to-do items yet. Add one above!"
                HorizontalOptions="Center"
@@ -68,7 +61,6 @@
                FontSize="14"
                Margin="0,20,0,0"/>
 
-        <!-- ListView -->
         <ListView x:Name="todoLV"
                   HorizontalOptions="Fill"
                   VerticalOptions="Fill"
@@ -82,7 +74,6 @@
                         <Grid Padding="12,8" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto"
                               RowSpacing="2" BackgroundColor="White" Margin="0,2">
 
-                            <!-- Title -->
                             <Label Grid.Row="0" Grid.Column="0"
                                    Text="{Binding title}"
                                    FontSize="16"

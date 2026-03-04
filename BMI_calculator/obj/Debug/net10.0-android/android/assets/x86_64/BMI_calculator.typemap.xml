@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="BMI_calculator" mvid="2a411c6f4f4c4f7dac201877a0d053af">
+  <java-to-managed>
+    <entry java-name="crc641c7b78d1253fc348/MainActivity" managed-name="BMI_calculator.MainActivity, BMI_calculator" managed-type-token-id="33554441" />
+    <entry java-name="crc641c7b78d1253fc348/MainApplication" managed-name="BMI_calculator.MainApplication, BMI_calculator" managed-type-token-id="33554442" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc641c7b78d1253fc348/MainActivity" managed-name="BMI_calculator.MainActivity, BMI_calculator" managed-type-token-id="33554441" />
+    <entry java-name="crc641c7b78d1253fc348/MainApplication" managed-name="BMI_calculator.MainApplication, BMI_calculator" managed-type-token-id="33554442" />
+  </managed-to-java>
+</api>

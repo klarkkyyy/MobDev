@@ -326,3 +326,8 @@ C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\obj\Debug\net
 C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\obj\Debug\net10.0-ios\iossimulator-x64\ToDo_ListView.pdb
 C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\obj\Debug\net10.0-ios\iossimulator-x64\ToDo_ListView.genruntimeconfig.cache
 C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\obj\Debug\net10.0-ios\iossimulator-x64\ref\ToDo_ListView.dll
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\bin\Debug\net10.0-ios\iossimulator-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\bin\Debug\net10.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\bin\Debug\net10.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\bin\Debug\net10.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
+C:\Users\karlm\Documents\Papilis\3rdYr\2ndSem\MobDev\ToDo_ListView\obj\Debug\net10.0-ios\iossimulator-x64\ToDo_ListView.sourcelink.json
