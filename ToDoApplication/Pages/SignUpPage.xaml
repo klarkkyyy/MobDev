@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="ToDoApplication.Pages.SignUpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid Padding="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Text="Create Account" FontSize="28" Grid.Row="0" HorizontalOptions="Center" />
+
+        <Frame Grid.Row="1" Padding="20" CornerRadius="12" HasShadow="True" BackgroundColor="{StaticResource White}">
+            <VerticalStackLayout Spacing="12">
+                <Entry Placeholder="Name" />
+                <Entry Placeholder="Email" Keyboard="Email" />
+                <Entry Placeholder="Password" IsPassword="True" />
+
+                <Button Text="Create Account" Clicked="OnCreateClicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+</ContentPage>

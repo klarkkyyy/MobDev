@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="ToDoApplication.Pages.ToDoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid Padding="12" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <HorizontalStackLayout Spacing="10" Grid.Row="0">
+            <Button Text="☰" Clicked="OnToggleMenuClicked" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" />
+            <Label Text="My Tasks" FontSize="22" VerticalOptions="Center" />
+            <Button Text="Add" Clicked="OnAddClicked" HorizontalOptions="EndAndExpand" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+            <Button Text="Clear" Clicked="OnClearClicked" BackgroundColor="Transparent" TextColor="{StaticResource Magenta}" />
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="todoList" SelectionMode="Single" SelectionChanged="OnSelectionChanged" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8" Padding="10" Margin="4" HasShadow="True" BackgroundColor="{StaticResource White}">
+                        <Grid ColumnDefinitions="Auto, *">
+                            <CheckBox IsChecked="{Binding IsCompleted, Mode=TwoWay}" VerticalOptions="Center" />
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding item_name}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Black}" />
+                                <Label Text="{Binding item_description}" FontSize="12" TextColor="{StaticResource Gray500}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

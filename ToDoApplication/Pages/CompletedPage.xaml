@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="ToDoApplication.Pages.CompletedPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Padding="10">
+
+        <Label Text="Completed Tasks"
+               FontSize="24"/>
+
+        <CollectionView x:Name="completedList" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8" Padding="10" Margin="4" HasShadow="True" BackgroundColor="{StaticResource White}">
+                        <Grid ColumnDefinitions="Auto, *">
+                            <CheckBox IsChecked="{Binding IsCompleted, Mode=TwoWay}" VerticalOptions="Center" />
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding item_name}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Black}" />
+                                <Label Text="{Binding item_description}" FontSize="12" TextColor="{StaticResource Gray500}"  />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

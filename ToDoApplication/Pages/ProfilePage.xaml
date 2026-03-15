@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="ToDoApplication.Pages.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Gray100}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="Profile" FontSize="28" HorizontalOptions="Center" TextColor="{StaticResource Primary}" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="12">
+                <Frame WidthRequest="120" HeightRequest="120" CornerRadius="60" HasShadow="True" Padding="0" BackgroundColor="{StaticResource Gray200}">
+                    <Image Source="dotnet_bot.png" Aspect="AspectFill" />
+                </Frame>
+            </HorizontalStackLayout>
+
+            <Label Text="User Name" FontSize="18" HorizontalOptions="Center" TextColor="{StaticResource Black}" />
+
+            <Frame CornerRadius="8" Padding="12" BackgroundColor="{StaticResource White}" HasShadow="True">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Account" FontAttributes="Bold" TextColor="{StaticResource Black}" />
+                    <Label Text="Email: user@example.com" FontSize="12" TextColor="{StaticResource Gray600}" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Logout" Clicked="OnLogoutClicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
