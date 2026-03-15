@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApplication.Pages.StarredPage"
+             Title="Starred">
+
+    <Grid Padding="12" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Text="Starred Tasks" FontSize="22" Grid.Row="0" />
+
+        <CollectionView x:Name="starredList" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 8" Padding="10" Margin="4"
+                            BackgroundColor="{StaticResource White}" StrokeThickness="0">
+                        <Grid ColumnDefinitions="Auto, *">
+                            <Label Text="★" TextColor="Orange" FontSize="20"
+                                   VerticalOptions="Center" Margin="0,0,8,0"/>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding item_name}" FontAttributes="Bold"
+                                       FontSize="16" TextColor="{StaticResource Black}" />
+                                <Label Text="{Binding item_description}" FontSize="12"
+                                       TextColor="{StaticResource Gray500}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

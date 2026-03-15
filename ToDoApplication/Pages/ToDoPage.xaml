@@ -21,15 +21,33 @@
         <CollectionView x:Name="todoList" SelectionMode="Single" SelectionChanged="OnSelectionChanged" Grid.Row="1">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame CornerRadius="8" Padding="10" Margin="4" HasShadow="True" BackgroundColor="{StaticResource White}">
-                        <Grid ColumnDefinitions="Auto, *">
-                            <CheckBox IsChecked="{Binding IsCompleted, Mode=TwoWay}" VerticalOptions="Center" />
-                            <VerticalStackLayout Grid.Column="1" Spacing="2">
-                                <Label Text="{Binding item_name}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Black}" />
-                                <Label Text="{Binding item_description}" FontSize="12" TextColor="{StaticResource Gray500}" />
-                            </VerticalStackLayout>
-                        </Grid>
-                    </Frame>
+                    <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="OnDeleteSwiped"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Frame CornerRadius="8" Padding="10" Margin="4" HasShadow="True" BackgroundColor="{StaticResource White}">
+                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                <CheckBox IsChecked="{Binding IsCompleted, Mode=TwoWay}" 
+                                  VerticalOptions="Center" 
+                                  InputTransparent="True"/>     
+                                <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                        <Label Text="{Binding item_name}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Black}" />
+                                        <Label Text="{Binding item_description}" FontSize="12" TextColor="{StaticResource Gray500}" />
+                                </VerticalStackLayout>
+                                <Button Grid.Column="2"
+                                        Text="{Binding isStarred, Converter={StaticResource StarConverter}}"
+                                        FontSize="20"
+                                        BackgroundColor="Transparent"
+                                        TextColor="Orange"
+                                        WidthRequest="44"
+                                        HeightRequest="44"
+                                        Clicked="OnStarClicked"
+                                        BindingContext="{Binding .}"/>          
+                            </Grid> 
+                            </Frame>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

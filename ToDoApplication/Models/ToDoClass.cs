@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -10,6 +11,7 @@ namespace ToDoApplication.Models
         string _item_name;
         string _item_description;
         string _status;
+        bool _isStarred;
         int _user_id;
 
         public int item_id
@@ -51,7 +53,11 @@ namespace ToDoApplication.Models
                 }
             }
         }
-
+        public bool isStarred
+        {
+            get { return _isStarred; }
+            set { _isStarred = value; OnPropertyChanged(); }
+        }
         public int user_id
         {
             get { return _user_id; }

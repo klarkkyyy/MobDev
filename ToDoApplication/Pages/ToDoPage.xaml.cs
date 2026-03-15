@@ -32,6 +32,7 @@ public partial class ToDoPage : ContentPage
     private void OnClearClicked(object sender, EventArgs e)
     {
         tasks.Clear();
+        ToDoApplication.Services.TaskStore.StarredTasks.Clear(); 
     }
 
     private void OnToggleMenuClicked(object sender, EventArgs e)
@@ -42,13 +43,41 @@ public partial class ToDoPage : ContentPage
         }
     }
 
+    private void OnDeleteSwiped(object sender, EventArgs e)
+    {
+        var swipeItem = sender as SwipeItem;
+        var todoItem = swipeItem?.BindingContext as ToDoClass;
+        if (todoItem != null)
+        {
+            tasks.Remove(todoItem);
+            ToDoApplication.Services.TaskStore.StarredTasks.Remove(todoItem); 
+        }
+    }
+
     private async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (e.CurrentSelection != null && e.CurrentSelection.Count > 0 && e.CurrentSelection[0] is ToDoClass item)
+        if (e.CurrentSelection.FirstOrDefault() is ToDoClass item)
         {
-            await Navigation.PushAsync(new EditToDoPage(item));
-            // clear selection
             ((CollectionView)sender).SelectedItem = null;
+            ToDoApplication.Services.TaskStore.SelectedTask = item;
+            await Shell.Current.GoToAsync(nameof(EditToDoPage));
+        }
+    }
+
+    private void OnStarClicked(object sender, EventArgs e)
+    {
+        var button = sender as Button;
+        var item = button?.BindingContext as ToDoClass;
+
+        if (item != null)
+        {
+            item.isStarred = !item.isStarred;
+            button.Text = item.isStarred ? "★" : "☆";
+
+            if (item.isStarred)
+                ToDoApplication.Services.TaskStore.StarredTasks.Add(item);
+            else
+                ToDoApplication.Services.TaskStore.StarredTasks.Remove(item);
         }
     }
 }

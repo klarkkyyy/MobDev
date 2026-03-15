@@ -1,26 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ToDoApplication.Pages;
 
 public partial class EditToDoPage : ContentPage
 {
     private ToDoApplication.Models.ToDoClass _item;
 
-    public EditToDoPage(ToDoApplication.Models.ToDoClass item)
+    public EditToDoPage()
     {
         InitializeComponent();
-        _item = item;
+        _item = ToDoApplication.Services.TaskStore.SelectedTask;
         BindingContext = _item;
     }
 
     private async void OnSaveClicked(object sender, EventArgs e)
     {
-        // Binding updates the item automatically, just go back
-        await Navigation.PopAsync();
+        await Shell.Current.GoToAsync("..");
     }
 
     private async void OnDeleteClicked(object sender, EventArgs e)
@@ -29,7 +23,7 @@ public partial class EditToDoPage : ContentPage
         if (ok)
         {
             ToDoApplication.Services.TaskStore.Tasks.Remove(_item);
-            await Navigation.PopAsync();
+            await Shell.Current.GoToAsync("..");
         }
     }
 }
